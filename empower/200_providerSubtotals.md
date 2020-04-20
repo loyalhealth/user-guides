@@ -1,3 +1,7 @@
+---
+name: Provider Subtotals
+---
+
 ## Provider Subtotals
 
 Subtotals (also known as Rated Sections) for Providers
@@ -33,12 +37,12 @@ namespace GetProviderSubtotals
 ```
 
 ```javascript
-const request = require('request');
-const providerId = '4617'; // set your provider id here;
+const request = require("request");
+const providerId = "4617"; // set your provider id here;
 const options = {
-  method: 'GET',
+  method: "GET",
   url: `https://api.loyalhealth.com/empower/providers/${providerId}/subtotals`,
-  headers: { Authorization: `Bearer ${process.env.TOKEN}` }
+  headers: { Authorization: `Bearer ${process.env.TOKEN}` },
 };
 
 function callback(error, response, body) {

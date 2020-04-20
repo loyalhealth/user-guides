@@ -1,3 +1,7 @@
+---
+name: ReactJS
+---
+
 ## ReactJS
 
 Using [the latest version of ReactJS](https://facebook.github.io/react/)
@@ -15,7 +19,11 @@ The provider comments component will include: N out of 5 rating for each comment
 ```html
 <head>
   <!-- other <head> tags -->
-  <link href="https://empower.loyalhealth.com/clients/[your-client-name]/empower.bundle.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://empower.loyalhealth.com/clients/[your-client-name]/empower.bundle.css"
+    rel="stylesheet"
+    type="text/css"
+  />
 </head>
 <body>
   <!-- Drop in the Totals component -->
@@ -24,6 +32,9 @@ The provider comments component will include: N out of 5 rating for each comment
   <div id="loyal-subtotals"></div>
   <!-- Drop in the Comments component -->
   <div id="loyal-comments"></div>
-  <script src="https://empower.loyalhealth.com/clients/[your-client-name]/empower.bundle.js" async></script>
+  <script
+    src="https://empower.loyalhealth.com/clients/[your-client-name]/empower.bundle.js"
+    async
+  ></script>
 </body>
 ```

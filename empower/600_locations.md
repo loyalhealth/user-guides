@@ -1,3 +1,7 @@
+---
+name: Locations
+---
+
 ## Locations
 
 Aggregate rating for a location
@@ -33,12 +37,12 @@ namespace GetLocationRatings
 ```
 
 ```javascript
-const request = require('request');
-const locationId = '1234';
+const request = require("request");
+const locationId = "1234";
 const options = {
-  method: 'GET',
+  method: "GET",
   url: `https://api.loyalhealth.com/empower/locations/${locationId}`,
-  headers: { Authorization: `Bearer ${process.env.TOKEN}` }
+  headers: { Authorization: `Bearer ${process.env.TOKEN}` },
 };
 
 function callback(error, response, body) {
@@ -96,13 +100,13 @@ namespace GetLocationRatings
 ```
 
 ```javascript
-const request = require('request');
-const locationIds = ['1234', '5678']; // set your provider ids here;
+const request = require("request");
+const locationIds = ["1234", "5678"]; // set your provider ids here;
 const options = {
-  method: 'POST',
+  method: "POST",
   url: `https://api.loyalhealth.com/empower/locations/totals`,
   headers: { Authorization: `Bearer ${process.env.TOKEN}` },
-  body: JSON.stringify(locationIds)
+  body: JSON.stringify(locationIds),
 };
 
 function callback(error, response, body) {

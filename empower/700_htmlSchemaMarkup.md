@@ -1,3 +1,7 @@
+---
+name: Structured Data
+---
+
 ## HTML Schema Markup | Structured Data
 
 Search engines work hard to understand the content of a page. You can help them by providing explicit clues about the meaning of a page by including structured data on the page. Structured data is a standardized format for providing information about a page and classifying the page content.
@@ -20,8 +24,13 @@ For your Providers/Doctors, this data can be represented by the following, and a
   <!—- Make sure to include the image prop -->
   <img itemprop="image" src="https://healthsystem.org/providers/58310.jpg" />
 
-  <p itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-    <span itemprop="ratingValue">4.8</span> out of 5 <span itemprop="ratingCount">344</span> Ratings, 0 Comments
+  <p
+    itemprop="aggregateRating"
+    itemscope
+    itemtype="http://schema.org/AggregateRating"
+  >
+    <span itemprop="ratingValue">4.8</span> out of 5
+    <span itemprop="ratingCount">344</span> Ratings, 0 Comments
   </p>
 </section>
 ```

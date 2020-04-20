@@ -1,3 +1,7 @@
+---
+name: Provider Rollups V2
+---
+
 ## Provider Rollups V2
 
 Aggregate rating for a group of providers
@@ -61,13 +65,13 @@ namespace GetPagedRollup
 ```
 
 ```javascript
-const request = require('request');
+const request = require("request");
 const offset = 20;
 const limit = 10;
 const options = {
-  method: 'GET',
+  method: "GET",
   url: `https://api.loyalhealth.com/empower/v2/rollups?offset=${offset}&limit=${limit}`,
-  headers: { Authorization: `Bearer ${process.env.TOKEN}` }
+  headers: { Authorization: `Bearer ${process.env.TOKEN}` },
 };
 
 function callback(error, response, body) {
@@ -91,7 +95,13 @@ Content-Type: application/json
     "description": "Roll-up of providers related to Cardiology",
     "id": 1,
     "name": "Cardiology",
-    "providerIds": ["1013073543", "1063442994", "1134120249", "1174591580", "1316915911"],
+    "providerIds": [
+      "1013073543",
+      "1063442994",
+      "1134120249",
+      "1174591580",
+      "1316915911"
+    ],
     "rating": 4.6,
     "ratingCount": 1888,
     "reviewCount": 200,
@@ -188,12 +198,12 @@ namespace GetRollup
 ```
 
 ```javascript
-const request = require('request');
+const request = require("request");
 const rollupId = 1;
 const options = {
-  method: 'GET',
+  method: "GET",
   url: `https://api.loyalhealth.com/empower/v2/rollups/${rollupId}`,
-  headers: { Authorization: `Bearer ${process.env.TOKEN}` }
+  headers: { Authorization: `Bearer ${process.env.TOKEN}` },
 };
 
 function callback(error, response, body) {
@@ -216,7 +226,13 @@ Content-Type: application/json
   "description": "Roll-up of providers related to Cardiology",
   "id": 1,
   "name": "Cardiology",
-  "providerIds": ["1013073543", "1063442994", "1134120249", "1174591580", "1316915911"],
+  "providerIds": [
+    "1013073543",
+    "1063442994",
+    "1134120249",
+    "1174591580",
+    "1316915911"
+  ],
   "rating": 4.6,
   "ratingCount": 1888,
   "reviewCount": 200,
@@ -294,14 +310,14 @@ namespace GetRollup
 ```
 
 ```javascript
-const request = require('request');
+const request = require("request");
 const offset = 0;
 const limit = 2;
 const rollupId = 1;
 const options = {
-  method: 'GET',
+  method: "GET",
   url: `https://api.loyalhealth.com/empower/v2/rollups/${rollupId}/reviews?offset=${offset}&limit=${limit}`,
-  headers: { Authorization: `Bearer ${process.env.TOKEN}` }
+  headers: { Authorization: `Bearer ${process.env.TOKEN}` },
 };
 
 function callback(error, response, body) {
@@ -324,7 +340,13 @@ Content-Type: application/json
   "description": "Roll-up of providers related to Cardiology",
   "id": 1,
   "name": "Cardiology",
-  "providerIds": ["1013073543", "1063442994", "1134120249", "1174591580", "1316915911"],
+  "providerIds": [
+    "1013073543",
+    "1063442994",
+    "1134120249",
+    "1174591580",
+    "1316915911"
+  ],
   "rating": 4.6,
   "ratingCount": 1888,
   "reviewCount": 200,

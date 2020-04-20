@@ -1,3 +1,7 @@
+---
+name: Provider Surveys
+---
+
 ## Provider Surveys
 
 Surveys for Providers
@@ -38,12 +42,12 @@ namespace GetProviderSurveys
 ```
 
 ```javascript
-const request = require('request');
-const providerId = '4617'; // set your provider id here;
+const request = require("request");
+const providerId = "4617"; // set your provider id here;
 const options = {
-  method: 'GET',
+  method: "GET",
   url: `https://api.loyalhealth.com/empower/providers/${providerId}/surveys`,
-  headers: { Authorization: `Bearer ${process.env.TOKEN}` }
+  headers: { Authorization: `Bearer ${process.env.TOKEN}` },
 };
 
 function callback(error, response, body) {
