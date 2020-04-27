@@ -1,5 +1,5 @@
 ---
-name: 'Chatbot Installation Test'
+name: 'Chatbot Installation'
 ---
 
 ## Chatbot Installation
