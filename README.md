@@ -11,5 +11,7 @@ To add a file, click the `Create New File` button from the main page. If you are
 
 To delete a file, find that file and click the delete icon. And commit the change to the appropriate branch.
 
-Once you are finished making changes, you will create a Pull Request. There are several places where you can do this. On the main page, there is a button next to the branch dropdown. Or you can go to the Pull Request tab (https://github.com/loyalhealth/user-guides/pulls). To create the Pull Request, make sure the master branch is selected on the left with your branch on the right and the arrow in the middle pointing to the master branch.
-![Pull Request Screenshot](/images/pull-request-screenshot.jpg "Pull Request Screenshot")
+Once you are finished making changes, you will create a Pull Request. There are several places where you can do this. On the main page, there is a button next to the branch dropdown. Or you can go to the Pull Request tab (https://github.com/loyalhealth/user-guides/pulls). To create the Pull Request, make sure the master branch is selected on the left with your branch on the right and the arrow in the middle pointing to the master branch then click the `Create Pull Request` button.
+![Pull Request Screenshot - Brackets](/images/pull-request-screenshot.jpg "Pull Request Screenshot Quote/Paren")
+
+In order to be merged into master and displayed on the site, your Pull Request will need to be approved. Once you create the request, a reviewer will be notified.
