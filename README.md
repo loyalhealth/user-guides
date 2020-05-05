@@ -12,6 +12,19 @@ To add a file, click the `Create New File` button from the main page. If you are
 To delete a file, find that file and click the delete icon. And commit the change to the appropriate branch.
 
 Once you are finished making changes, you will create a Pull Request. There are several places where you can do this. On the main page, there is a button next to the branch dropdown. Or you can go to the Pull Request tab (https://github.com/loyalhealth/user-guides/pulls). To create the Pull Request, make sure the master branch is selected on the left with your branch on the right and the arrow in the middle pointing to the master branch then click the `Create Pull Request` button.
-![Pull Request Screenshot - Brackets](/images/pull-request-screenshot.jpg "Pull Request Screenshot Quote/Paren")
+![Pull Request Screenshot](/images/pull-request-screenshot.jpg "Pull Request Screenshot")
 
-In order to be merged into master and displayed on the site, your Pull Request will need to be approved. Once you create the request, a reviewer will be notified.
+In order to be merged into master and displayed on the site, your Pull Request will need to be approved. Once you create the request, a reviewer will be notified. After its been reviewed and merged, it will be live on the site. However, some users might experience a delay of up to 24 hours because of cache.
+
+## Tips
+If you want to include images, the image will need to be hosted somewhere and you will need to use an absolute path to the image. The easiest way to do this would be to them to the `images` directory in this repo. The absolute url would be `https://raw.githubusercontent.com/loyalhealth/user-guides/master/images/IMAGE_FILE_NAME.FILE_EXT`. **Please note that is path is referencing the master branch. The image will not be displayed until it has been pushed to master. When working with images, it might be beneficial to add them first and create a pull request prior to adding the image to a markdown file. Also, make sure to use the appropriate file extension for the image (.jpg, .png, etc)**
+
+To include an image in a file, you use the following format:
+```html
+![IMAGE ALT TEXT](IMAGE_URL.FILE_EXT "IMAGE TITLE")
+```
+
+For example, the following would display the screenshot image from above:
+```html
+![Pull Request Screenshot](https://raw.githubusercontent.com/loyalhealth/user-guides/master/images/pull-request-screenshot.jpg "Pull Request Screenshot")
+```
