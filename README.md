@@ -16,6 +16,8 @@ Once you are finished making changes, you will create a Pull Request. There are 
 
 In order to be merged into master and displayed on the site, your Pull Request will need to be approved. Once you create the request, a reviewer will be notified. After its been reviewed and merged, it will be live on the site. However, some users might experience a delay of up to 24 hours because of cache.
 
+Always create a new branch when making edits. This will help prevent stale branches and merge conflicts. Once your pull request has been merged, please delete that branch so they branches don't become overwhelming. As a general guideline, the preferred way of creating branches would be `GITHUB_USERNAME/FEATURE_OR_PULL_REQUEST_NAME`.
+
 ## Naming Structure
 The files are shown in the Developer Guide based on how they are named in the repo. They are listed in alphabetical order and will be displayed that way on their app page in Hub. In order to better control the order, the files were prefixed with a number followed by an underscore. The names of the files were also camelcased. The original files were order by the hundreds (for example: `100_introduction.md` or `300_howDoIGetAKey.md`). The title of the file in the left sidebar is created by metadata added to the beginning of a file.
 ```md
