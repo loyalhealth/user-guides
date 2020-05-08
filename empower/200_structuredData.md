@@ -30,7 +30,7 @@ For your Providers/Doctors, this data can be represented by the following, and a
     itemtype="http://schema.org/AggregateRating"
   >
     <span itemprop="ratingValue">4.8</span> out of 5
-    <span itemprop="ratingCount">344</span> Ratings, 0 Comments
+    <span itemprop="ratingCount">344</span> Ratings, 49 Comments
   </p>
 </section>
 ```
