@@ -1,8 +1,10 @@
 ---
-name: ReactJS
+name: Ratings Installation
 ---
 
-## ReactJS
+## Ratings Installation
+
+Adding Empower to your website is as simple as adding 1 line of JavaScript, 1 HTML tag to the bottom of your HTML inside the <body> tag, and a few HTML attributes. You'll need to replace the `data-key` attribute with a key given to you by our team. Reach out to your Loyal representative if you're not sure where to get this.
 
 Using [the latest version of ReactJS](https://facebook.github.io/react/)
 
@@ -16,24 +18,18 @@ The provider comments component will include: N out of 5 rating for each comment
 
 #### Usage
 
+Be sure to add `<div>` tags inside the `<body>` wherever you want ratings and reviews to display. 
+
 ```html
-<head>
-  <!-- other <head> tags -->
-  <link
-    href="https://empower.loyalhealth.com/clients/[your-client-name]/empower.bundle.css"
-    rel="stylesheet"
-    type="text/css"
-  />
-</head>
 <body>
   <!-- Drop in the Totals component -->
-  <div id="loyal-totals"></div>
+  <div id="loyal-totals" data-id="unique_provider_id" data-key=”unique_client_id”></div>
   <!-- Drop in the Subtotals component -->
-  <div id="loyal-subtotals"></div>
+  <div id="loyal-subtotals" data-id="unique_provider_id" data-key=”unique_client_id”></div>
   <!-- Drop in the Comments component -->
-  <div id="loyal-comments"></div>
+  <div id="loyal-comments" data-id="unique_provider_id" data-key=”unique_client_id”></div>
   <script
-    src="https://empower.loyalhealth.com/clients/[your-client-name]/empower.bundle.js"
+    src="https://empower.loyalhealth.com/clients/universal/empower.bundle.js"
     async
   ></script>
 </body>
