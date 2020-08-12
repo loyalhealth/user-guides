@@ -65,6 +65,13 @@ window.GuideSDK.bot.setCustomVariables({
   custom_first_name: 'Radric',
   custom_last_name: 'Davis',
   custom_account_number: '12345678',
+  custom_birth_date: '07/07/1980',
+  custom_phone_number: '770-999-0989',
+  custom_email_address: 'radric@email.com',
+  custom_address_1: '123 Main Street',
+  custom_city: 'Atlanta',
+  custom_state: 'GA',
+  custom_zip: '30308',
 });
 ```
 
