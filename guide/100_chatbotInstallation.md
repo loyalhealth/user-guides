@@ -12,14 +12,9 @@ Adding Guide to your website is as simple as adding 1 line of JavaScript and 1 H
 ```
 
 <p class="warning">
-  IMPORTANT: Some browsers, IE10 and IE9 are probably the two most relevant, do not support TLS 1.2. If your site is still supporting these browsers, you will need to exclude Guide with IE conditionals:
+  IMPORTANT: Guide is not supported on deprecated browsers (e.g. IE10 and earlier). If your site is still supporting these browsers, Guide will be automatically disabled in these environments.
 </p>
 
-```html
-<!--[if lt IE 11]>
-  dont add Guide's javascript ELSE add Guide!
-<![endif]-->
-```
 ### Method 2: Google Tag Manager
 You can also install Guide using Google Tag Manager. You’ll simply need to add the code snippet below to add Guide to your GTM account:
 ```
