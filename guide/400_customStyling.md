@@ -6,7 +6,7 @@ name: 'Custom Styling'
 
 ### Enabling Custom Styles
 
-By default, Guide cannot be targeted by styling in the usual way due to the insulation provided by the Shadow DOM. In order to apply custom styling, you'll need to insert your styles using the Guide SDK (see the API reference above).
+By default, Guide cannot be targeted by styling through typical means due to the insulation provided by the Shadow DOM. In order to apply custom styling, you'll need to insert your styles using the Guide SDK (see the API reference above).
 
 ### Classname Matching
 
