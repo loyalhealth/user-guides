@@ -6,7 +6,7 @@ name: 'Custom Styling'
 
 ### Enabling Custom Styles
 
-By default, we wrap Guide in a Shadow DOM element. You'll need to disable this in order to apply custom CSS styles (see above). Be aware that this may cause unintended CSS styling conflicts with any base styles on the page.
+By default, Guide cannot be targeted by styling through typical means due to the insulation provided by the Shadow DOM. In order to apply custom styling, you'll need to insert your styles using the Guide SDK (see the API reference above).
 
 ### Classname Matching
 

@@ -46,17 +46,70 @@ window.GuideSDK.off(eventName, callback);
 
 #### Events
 
-| Event Name        | Payload                | Description                                                             | Example Payload                                        |
+| Event Name        | Payload                | Trigger                                                             | Example Payload                                        |
 | ----------------- | ---------------------- | ----------------------------------------------------------------------- | ------------------------------------------------------ |
-| conversationStart | conversationId: String | Fired when a new conversation is started (only occurs once per session) | conversationId: '1afb23b2-8eb0-4972-8cdc-1cf59cffb540' |
+| conversationStart | conversationId: String | New conversation is started (only occurs once per session) | `{ conversationId: '1afb23b2-8eb0-4972-8cdc-1cf59cffb540' }` |
+| conversationEnd | `N/A` | Conversation is ended | |
+| messageSend | message: String | Message sent through Guide | `{ message: 'Hello, World!' }` |
+| messageReceive | author: String, message: String | Message received through Guide | `{ author: 'Scranton Healthcare', message: 'Hello, World!' }` |
+| windowOpen | `N/A` | Guide UI window opened | |
+| windowClose | `N/A` | Guide UI window closed | |
 
 <hr>
 
-### Bot API
+### Bot API Reference
 
 The Guide SDK also has an API that allows developers to interact with the bot directly via the `window.GuideSDK.bot` interface. These API calls can be invoked any time after the bot has been initialized.
 
-#### setCustomVariables
+
+`window.GuideSDK.bot.*` in the console
+
+#### activeConversation `property`
+ID of the current conversation, if active.
+
+<hr>
+
+#### activeWorkflow `property`
+ID of current workflow, if applicable.
+
+<hr>
+
+#### sendMessage(message)
+Send message, initiate conversation if necessary.
+
+<hr>
+
+#### startConversation(message)
+Initiate conversation with *message*.
+
+<hr>
+
+#### endConversation()
+Terminates currently active conversation.
+
+<hr>
+
+#### resetConversation()
+Resets the current conversation.
+
+<hr>
+
+#### purgeConversation()
+Purge local state for current conversation.
+
+<hr>
+
+#### openWindow()
+Open guide window.
+
+<hr>
+
+#### closeWindow()
+Close guide window.
+
+<hr>
+
+#### setCustomVariables(config)
 
 ##### Example
 
@@ -98,7 +151,7 @@ Note: custom variables collected by form actions will take precedence over custo
 
 <hr>
 
-#### setCustomSettings
+#### setCustomSettings(config)
 
 ##### Example
 
@@ -117,7 +170,6 @@ Sets the bot's custom settings. This list is continuously growing, however we cu
 | :--------------- | :----- | -------------- | -------------------------------------------------------------------------------------------------------- |
 | padding          | Int    | 25             | A number that will define the padding around the Guide launcher/ bot                                     |
 | customClassName  | String | 'scranton-bot' | A value that will be added to the top level of the React component, allowing the client to run A/B tests |
-| disableShadowDOM | Bool   | true           | Disables the Shadow DOM wrapper. ⚠️Warning:⚠️ This could cause unintended style conflicts.               |
 
 ##### Deprecated
 
@@ -132,3 +184,34 @@ You can also add these settings by setting them to the `window.guideSettings` ob
   };
 </script>
 ```
+
+<hr>
+
+#### style.add(style)
+
+##### Example
+
+```js
+window.GuideSDK.bot.style.add(`
+  div {
+    font: 15px Arial, sans-serif;
+    color: red;
+    border: 1px solid black;
+  }
+`);
+```
+Inject style into Guide's Shadow DOM.
+
+Styles can be injected in several ways, depending on the type of parameter passed:
+
+##### String
+
+When a string is passed, a new `<style>` element will be created automatically and its contents set to that of the string.
+
+##### <style\>
+
+When a `<style>` tag is passed, it will be directly inserted into the Shadow DOM.
+
+##### <template\>
+
+Additionally, a [template](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template) can be utilized to insert markup. The provided `<template>` will be automatically instantiated and inserted into the Shadow DOM.
