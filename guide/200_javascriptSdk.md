@@ -2,9 +2,9 @@
 name: "Guide SDK"
 ---
 
-# Guide SDK
+## Guide SDK
 
-## Getting Started
+### Getting Started
 
 The **Guide SDK** is a feature designed to allow developers the ability to integrate their own features with the Guide application. With the SDK, you can trigger certain behaviors, access variables, and react to events as users utilize Guide within your application.
 
@@ -140,11 +140,11 @@ window.GuideSDK.bot.style.add(myStyle);
 
 The CSS selector in the above example may be unfamiliar to you, but it simply targets any `<div>` whose `class` value _begins_ with `Header__HeaderWrapper`. **Most of the major discrete components of Guide must be targeted in this manner**; you can read more about why in the styling section below.
 
-## Real-world examples
+### Real-world examples
 
 Using these features, let's look at a couple of examples that combine these functionalities to solve some real use-cases.
 
-### Opening Guide with a button
+#### Opening Guide with a button
 
 Let's say I'm a website developer who'd like to create a "Speak to an Agent" button on my website. When clicked, this button should open Guide, and begin a conversation with an available agent.
 
@@ -167,7 +167,7 @@ Now when the button is clicked, my `handleClick` function will send the appropri
 
 <hr>
 
-### Launching Guide via URL
+#### Launching Guide via URL
 
 Now, I'd like my site to vary the behavior of Guide based on the current URL so that some users will have the Guide window opened automatically.
 
@@ -192,7 +192,7 @@ window.GuideSDKInit = checkURL;
 
 As before, we again define a function for the SDK to execute once it's initialized. Within that function, we parse parameters using the browser's built-in functionality. If `open=true` (as in the above URL), our function will call the SDK causing the Guide window to open.
 
-## Event Listener
+### Event Listener
 
 The Guide SDK offers an event listener that executes a callback when a predetermined event is fired. To attach an event listener, simply call:
 
@@ -217,7 +217,7 @@ window.GuideSDK.off(eventName, callback);
 | windowOpen        | `N/A`                           | Guide UI window opened                                     |                                                               |
 | windowClose       | `N/A`                           | Guide UI window closed                                     |                                                               |
 
-## Bot API Reference
+### Bot API Reference
 
 The Guide SDK also has an API that allows developers to interact with the bot directly via the `window.GuideSDK.bot` interface. These API calls can be invoked any time after the bot has been initialized.
 
