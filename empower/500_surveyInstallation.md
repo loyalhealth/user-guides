@@ -1,6 +1,8 @@
 ---
-name: Touchpoint Surveys Setup
+name: Touchpoint Surveys
 ---
+
+# Touchpoint Surveys
 
 ## Installation and Usage
 
