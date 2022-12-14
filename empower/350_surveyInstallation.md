@@ -9,8 +9,6 @@ configure it to render to the DOM element of your choosing.
 
 ### Installation
 
-Be sure to add `<div>` tags inside the `<body>` wherever you want ratings and 
-reviews to display.
 
 ```html
 <body>
