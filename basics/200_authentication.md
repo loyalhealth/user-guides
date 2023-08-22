@@ -4,13 +4,17 @@ name: 'Authentication'
 
 ## Authentication
 
-Call to the Loyal API will need the `Authorization` HTTP header using the [Bearer authentication scheme](https://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-20#section-2.1).
+Calls to the Loyal API will need the `Authorization` HTTP header using the [Bearer authentication scheme](https://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-20#section-2.1).
 
-In order to get your token to pass in your `Authorization` header, you'll first need to make a general `POST` call to our endpoint along with your API Key.
+In order to get your token to pass in your `Authorization` header, you'll first need to make a general `POST` call to our `token` endpoint along with your API Key.
 
-<h3>Get Token <span class="api-badge">POST</span></h3>
+### Get Token POST
+
+This endpoint returns a JSON object containing the token you can use to authenticate API requests.
 
 `https://api.loyalhealth.com/auth/client/token`
+
+Examples of making this API request:
 
 ```csharp
 namespace ClientApiAuthorization
@@ -58,7 +62,7 @@ function callback(error, response, body) {
 request(options, callback); // make new calls using set token
 ```
 
-Returns a single JSON object of the Authentication, designated from the client's API key
+Return example:
 
 ```http
 HTTP/1.1 200 OK
