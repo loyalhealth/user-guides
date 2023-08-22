@@ -1,5 +1,5 @@
 ---
-name: 'How Do I Get an API Key?'
+name: 'How do I get an API key?'
 ---
 
 ## How do I get an API Key?
