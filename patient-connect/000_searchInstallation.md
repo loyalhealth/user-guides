@@ -1,12 +1,12 @@
 ---
-name: Installation
+name: Care Search Installation
 ---
 
-## Installation
+## Care Search Installation
 
 ### Drop HTML and JavaScript
 
-To use the care search module, this block of code should be placed on the page where the module should appear (e.g. between the header and footer). When the script below loads, it finds the appropriate section in the dom and creates a shadowRoot where the search module will live. The `script` tag **must** come after the `section` tag.
+To use the Care Search module, this block of code should be placed on the page where the module should appear (e.g. between the header and footer). When the script below loads, it finds the appropriate section in the dom and creates a shadowRoot where the search module will live. The `script` tag **must** come after the `section` tag.
 
 
 ```html
