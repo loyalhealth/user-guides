@@ -41,7 +41,8 @@ Q: We need to set up a beta/staging site to test on first
 
 A: The only change for your beta/staging site from the above install instructions will be changing the src on the script tag to "https://scheduling-staging.loyalhealth.com/client/scheduling.bundle.js" and you will need to make sure you’ve got your loyal staging environment set up to point to your EHR staging environment.
 
--
+---
+
 Q: We have a content security policy that isn’t allowing your script to load.
 
 A: You will need to update your content security policy to allow data from *.loyalhealth.com.
@@ -59,12 +60,14 @@ Example:
 />
 ```
 
---
+---
+
 Q: What if I have global event listeners that stop propagation of events? For example, I want to intercept space bar presses to make the scrolling of the page smoother, but now putting spaces in the search bar isn't working?
 
 A: We use the shadow dom, which means at the document level any event's target will be the section we drop our module into. If you're setting up global event listeners where events need to be intercepted unless the target of the event is the input or something similar, you'll need to look at the composed path instead of the event's target i.e. event.composedPath[0] would be the actual target of the event.
 
---
+---
+
 Q: What if I need to use a query param for the npi instead of having it be part of the url?
 
 A: The query param must be named npi (e.g. `myhealthcaresystem.com/book-appointment?npi=123456789`), and you would change your routing to the below:
