@@ -2,12 +2,12 @@
 name: Security
 ---
 
-## Security
+## API Security
 
 ### Supporting TLS 1.2
 
 <p class="warning">
-  IMPORTANT: After July 31, 2018, the Loyal API and Guide web application will require TLS 1.2. Older versions of TLS will no longer be supported. Virtually all modern web browsers and operating systems have implemented support for TLS 1.2. However, we recommend you test your Loyal integrations to ensure a seamless transition.
+  IMPORTANT: After July 31, 2018, the Loyal API will require TLS 1.2. Older versions of TLS will no longer be supported. Virtually all modern web browsers and operating systems have implemented support for TLS 1.2. However, we recommend you test your Loyal integrations to ensure a seamless transition.
 </p>
 
 ### Testing for TLS Support

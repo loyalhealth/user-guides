@@ -4,7 +4,7 @@ name: Ratings Installation
 
 ## Ratings Installation
 
-Adding Empower to your website is as simple as adding 1 line of JavaScript, 1 HTML tag to the bottom of your HTML inside the <body> tag, and a few HTML attributes. You'll need to replace the `data-key` attribute with a key given to you by our team. Reach out to your Loyal representative if you're not sure where to get this.
+Adding Transparency to your website is as simple as adding 1 line of JavaScript, 1 HTML tag to the bottom of your HTML inside the <body> tag, and a few HTML attributes. You'll need to replace the `data-key` attribute with a key given to you by our team. Reach out to your Loyal representative if you're not sure where to get this.
 
 Using [the latest version of ReactJS](https://facebook.github.io/react/)
 

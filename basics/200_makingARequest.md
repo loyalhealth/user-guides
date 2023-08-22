@@ -1,16 +1,20 @@
 ---
-name: 'Authentication'
+name: 'Making a request'
 ---
 
-## Authentication
+# Making a Request
 
-Call to the Loyal API will need the `Authorization` HTTP header using the [Bearer authentication scheme](https://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-20#section-2.1).
+Calls to the Loyal API will need the `Authorization` HTTP header using the [Bearer authentication scheme](https://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-20#section-2.1).
 
-In order to get your token to pass in your `Authorization` header, you'll first need to make a general `POST` call to our endpoint along with your API Key.
+In order to get your token to pass in your `Authorization` header, you'll first need to make a general `POST` call to our `token` endpoint along with your ][*API Key*](/basics/developer-guide#how-do-i-get-an-api-key).
 
-<h3>Get Token <span class="api-badge">POST</span></h3>
+## Getting a token
+
+This endpoint returns a JSON object containing the token you can use to authenticate API requests.
 
 `https://api.loyalhealth.com/auth/client/token`
+
+Examples of making this API request:
 
 ```csharp
 namespace ClientApiAuthorization
@@ -58,7 +62,7 @@ function callback(error, response, body) {
 request(options, callback); // make new calls using set token
 ```
 
-Returns a single JSON object of the Authentication, designated from the client's API key
+Return example:
 
 ```http
 HTTP/1.1 200 OK
@@ -67,3 +71,14 @@ HTTP/1.1 200 OK
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJMb3lhbEFwaUNsaWVudEFjY2VzcyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJQaWVkbW9udCBIZWFsdGNhcmUiLCJDbGllbnRJZCI6IjcxNGRmNDA2LTg4MDItNDc5Zi1hOTZiLWY0ZTM2MmViYWI3MCIsImV4cCI6MTUzMDIxMjAzMCwiaXNzIjoibG95YWxoZWFsdGguY29tIiwiYXVkIjoibG95YWxoZWFsdGguY29tIn0.nt0JreFFPWOV6Ns1EI0ExWbNBQ_IFW9LzrufibsnbEw"
 }
 ```
+
+## Expiration
+
+Tokens expire after 24 hours. You may request a new token from the `/auth/client/token` endpoint to refresh the client token. Make sure to encrypt the client tokens you store!
+
+
+## About the API Token
+
+Loyal API uses [JSON Web Tokens](https://jwt.io/introduction/) (JWTs) to authenticating requests.
+
+The scopes claim of this token indicates which actions can be performed with it when calling this API. For example, this token would grant read-only access to users and read/write access to rules. Trying to perform any other action will result in a 403 Forbidden response.
