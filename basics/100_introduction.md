@@ -4,8 +4,6 @@ name: Introduction
 
 ## Introduction
 
-Loyal provides a simple and powerful REST API to integrate either Guide, Connect or Empower implementations.
+Loyal provides a simple and powerful REST APIs to integrate with our solutions. Use the top navigation to browse available documentation.
 
-This API reference provides information on available endpoints and how to interact with it.
-
-Note: If you’re still using legacy Transparently API (v1), you should access the [relevant API reference](https://api.transparently.com)
+This page provides base-level information on how to interact with our APIs.
