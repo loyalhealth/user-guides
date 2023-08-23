@@ -4,7 +4,7 @@ name: Web Scheduling Installation
 
 ## Web Scheduling Installation
 
-### Drop HTML and JavaScript
+### Add HTML & javascript import
 
 To use the Web Scheduling module, this block of code should be placed on the page where the module should appear (e.g. between the header and footer). When the script below loads, it finds the appropriate section in the dom and creates a shadowRoot where the search module will live. The `script` tag **must** come after the `section` tag.
 

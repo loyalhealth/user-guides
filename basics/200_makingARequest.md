@@ -2,13 +2,13 @@
 name: 'Making a request'
 ---
 
-# Making a Request
+## Making a Request
 
 Calls to the Loyal API will need the `Authorization` HTTP header using the [Bearer authentication scheme](https://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-20#section-2.1).
 
 In order to get your token to pass in your `Authorization` header, you'll first need to make a general `POST` call to our `token` endpoint along with your ][*API Key*](/basics/developer-guide#how-do-i-get-an-api-key).
 
-## Getting a token
+### Getting a token
 
 This endpoint returns a JSON object containing the token you can use to authenticate API requests.
 
@@ -72,12 +72,12 @@ HTTP/1.1 200 OK
 }
 ```
 
-## Expiration
+### Expiration
 
 Tokens expire after 24 hours. You may request a new token from the `/auth/client/token` endpoint to refresh the client token. Make sure to encrypt the client tokens you store!
 
 
-## About the API Token
+### About the API Token
 
 Loyal API uses [JSON Web Tokens](https://jwt.io/introduction/) (JWTs) to authenticating requests.
 
