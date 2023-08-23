@@ -17,5 +17,5 @@ Rest APIs
 
 - [Chatbot](/chatbot/docs)
 - [Transparency](/transparency/docs)
-- [Data Management](/data-managment/docs)
+- [Data Management](/data-management/docs)
 - [Care Search](/care-search/docs)
