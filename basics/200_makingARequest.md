@@ -6,7 +6,7 @@ name: 'Making a request'
 
 Calls to the Loyal API will need the `Authorization` HTTP header using the [Bearer authentication scheme](https://tools.ietf.org/html/draft-ietf-oauth-v2-bearer-20#section-2.1).
 
-In order to get your token to pass in your `Authorization` header, you'll first need to make a general `POST` call to our `token` endpoint along with your ][*API Key*](/basics/developer-guide#how-do-i-get-an-api-key).
+In order to get your token to pass in your `Authorization` header, you'll first need to make a general `POST` call to our `token` endpoint along with your [*API Key*](/basics/developer-guide#how-do-i-get-an-api-key).
 
 ### Getting a token
 
