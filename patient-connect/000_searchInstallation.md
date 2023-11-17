@@ -10,42 +10,48 @@ To use the Care Search module, this block of code should be placed on the page w
 
 
 ```html
-<section id=”search”></section>
-<script type=”text/javascript” src=”https://connect.loyalhealth.com/client/search.bundle.js” data-id=”search-client-id” data-value=”[Your Client ID]” async>
-</script>
+<section id="loyal-search"></section>
+<script type="text/javascript" src="https://connect.loyalhealth.com/client/search.bundle.js" data-loyal-client-id="[Your Client ID]" data-loyal-market-id="[Your Market ID]" data-loyal-profile-id="[Website Profile ID (optional)]"></script>
 ```
 
 ### Configure routes on your server
 
-These routes need to be set up to redirect to the same page where the search module is loading:
+Routes need to be set up to redirect to the same page where the search module is loading. These are the defaults that loyal provides:
 
-`[your root url]`
+```
+[your root url]
+[your root url]/results
+[your root url]/provider/:entityId
+[your root url]/location/:entityId
+```
+We allow for customization of routing in search settings, so if you choose to customize the routes, your routes may look different than those above. For example, it may look like this:
 
-`[your root url]/results`
+```
+[your root url]
+[your root url]/results
+doctors/:entityId
+places/:entityId
+```
 
-`[your root url]/provider/:entityId`
+The search module leverages client-side routing, so if any of the routes are missing and a user hits a results/provider/location link directly, your routes may redirect them to a page not found error.
 
-`[your root url]/location/:entityId`
- 
-The search module leverages client-side routing, so if any of the routes are missing and a user hits a results/provider/location link directly, your routes may redirect them to a page not found error. Alternatively, if it works better with your site's routing, instead of enumerating the routes, you could do an inclusive route such as `find-care/*`
-
-Example in `node.js` where the root url is `find-care`:
+Example in `node.js` where the root url is `find-care` and the routes have not been customized:
 
 ```js
 // Node.js
- 
+
 router.get('/find-care', async function(req, res, next) {
  res.render('find-a-physician/index');
 });
- 
+
 router.get('find-care/results', async function(req, res, next) {
  res.render('find-a-physician/index');
 });
- 
+
 router.get('find-care/provider/:entityId', async function(req, res, next) {
  res.render('find-a-physician/index');
 });
- 
+
 router.get('find-care/location/:entityId', async function(req, res, next) {
  res.render('find-a-physician/index');
 });
