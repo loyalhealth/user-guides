@@ -1,5 +1,8 @@
 # Loyal Hub Developer Guides
+NOTE: This repository is public to power the Hub guidelines, do not change visibility status.
+
 The files in this repository will be used to power the Developer Guides at https://hub.loyalhealth.com. API documentation is created automatically from the product APIs. This is a public repo and anyone can submit changes that will be reviewed by the Loyal team.
+
 
 ## Builder
 To preview files, you can use the builder at https://hub.loyalhealth.com/builder. All eligible files from this repo will be listed in the dropdowns at the top of the page. Use the dropdowns to select a file to start editing or to use as a base. Clicking the `Preview` tab will show you how the file will be rendered inside Hub. Clicking the `Copy` button will copy the contents of the `Code` tab to your clipboard so that you can paste directly into GitHub or a local text editor. **Please note that the Builder does not save anything. If you refresh the page or navigate away, your changes will be lost. It only serves as a clipboard.**
