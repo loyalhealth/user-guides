@@ -133,8 +133,23 @@ function display_ssr_profile_content() {
 ```
 In this example, the shortcode `[ssr_profile_content]` is defined which can be placed in the desired wordpress page and will automatically insert SSR content.
 
+## Post-SSR Implementation: Updating Care Search Settings
+
+Once SSR has been successfully implemented on the server, the final step is to toggle a flag in the Care Search settings. This ensures that the Care Search script recognizes SSR is now active.
+
+### Why Is This Step Important?
+In scenarios where Care Search is still relying on CSR (Client-Side Rendering) — for instance, on the search results page — when a user clicks on a result, the profile will be displayed using CSR, even though SSR is enabled on the server. To handle this transition effectively, enabling the SSR flag in the admin dashboard ensures that the care search script will load the page from the server to use SSR.
+
+### How to Enable the SSR Flag:
+1. Navigate to the Care Search Admin Dashboard.
+2. Locate the **SSR Setting** in the settings panel.
+3. Toggle SSR **ON**.
+
+Once this flag is activated, the Care Search script will automatically load profile pages using server-rendered content.
+
+
 ## Test and Optimize
-Once SSR is implemented, test your site to ensure that the correct content is being loaded, and that it appears quickly in search engine crawlers.
+Once SSR is implemented and turned on, test your site to ensure that the correct content is being loaded, and that it appears quickly in search engine crawlers.
 
 ## FAQs
 **Q: Will SSR guarantee better SEO?**
