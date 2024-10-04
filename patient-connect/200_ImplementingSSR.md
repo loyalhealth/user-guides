@@ -5,15 +5,17 @@ name: Implementing Server-Side Rendering (SSR) for Provider and Location Profile
 # Implementing Server-Side Rendering (SSR) for Provider and Location Profile Pages (WIP 🚧)
 
 ## Introduction
-**The Server-Side Rendering (SSR)** feature in Care Search is an optional enhancement that allows provider and location information to be included in the initial HTML response from your server. This improves the chances that search engines will index your profile pages correctly, as key content is included at the time of page load.
+**The Server-Side Rendering (SSR)** feature in Care Search is an optional enhancement that allows provider and location content to be included in the initial HTML response from the server. Since the server fully renders the page content before sending it to the browser, it's generally easier for search engines to crawl and index the content.
 
 > **Note: While SSR can help with SEO, many other factors (e.g., page speed, mobile-friendliness) influence SEO performance.**
 
 ## Why Use SSR?
-By default, Care Search uses JavaScript to fetch and render location and provider information after the page has already loaded. This may not be ideal for search engines, which prefer to see all key content when the page first loads. SSR allows your server to insert the provider or location data directly into the HTML before it’s sent to the user’s browser.
+By default, Care Search uses Client-Side Rendering (CSR) to display page content, where most of the work of generating the content happens using JavaScript in the browser (on the client-side). While CSR has its own benefits, it can present challenges for search engine crawlers that traditionally expect (prefer) to see key content already in the static HTML that is served on an initial page load.
+
+Enter Server-Side Rendering (SSR). With SSR, when a user requests a page, the server generates the entire HTML content for that page and sends it to the browser (client). This means that the user sees the fully-rendered content immediately upon receiving the response from the server, without waiting for JavaScript to execute and dynamically generate the page content. This immediately available static HTML is typically easier for search engines to crawl and understand as they work to index webpages for potential search results.
 
 ## How SSR Works
-- **Client-Side Rendering**: Normally, Care Search renders profile or location information by calling APIs from the browser **after** the page has loaded, and inserting the data into the `<section id="loyal-search"></section>` tag.
+- **Client-Side Rendering**: Normally, Care Search renders provider or location information by calling APIs from the browser **after** the page has loaded, and inserting the data into the `<section id="loyal-search"></section>` tag.
 - **Server-Side Rendering**: With SSR, you can make a server-side request to the SSR API to fetch the HTML for provider or location data **before** responding to the client. This pre-fetched content is inserted into the `#loyal-search` section in the HTML response.
 
 ## Client-Side Rendering Fallback
@@ -22,7 +24,13 @@ It’s highly recommended to keep the `https://connect.loyalhealth.com/client/se
 ## Implementing SSR
 Normally, your site’s page for a provider or location would include an empty placeholder like this:
 ```html
-<section id="loyal-search"></section>
+<html>
+  <head></head>
+  <body>
+    <section id="loyal-search"></section>
+    <script src="https://connect.loyalhealth.com/client/search.bundle.js" data-loyal-client-id="" data-loyal-market-id=""></script>
+  </body>
+</html>
 ```
 With SSR, when your server receives a request for a provider or location page (e.g., `/find-care/provider/:entityId` or `/find-care/location/:entityId`), instead of returning the page with an empty `<section>`, it should call our SSR API to pre-load content:
 ```
@@ -34,7 +42,7 @@ GET https://api.loyalhealth.com/search-ssr/:clientId/:marketId/:profileId?/:enti
 - `entityType`: Either `provider` or `location`, depending on the type of data you are fetching.
 - `entityId`: The ID of the provider or location.
   
-The API will return a chunk of HTML that can be inserted into the `#loyal-search` section before sending the page back to the user’s browser.
+The API will return a chunk of HTML that should be inserted **server-side** into the `#loyal-search` section **before** sending the page to the user’s browser.
 
 ## Examples
 Below are examples of how to do this in different server-side environments.
@@ -77,7 +85,7 @@ app.get('/find-care/:entityType/:entityId', async (req, res) => {
 In this example, the SSR HTML is fetched and inserted into the `#loyal-search` section before returning the full HTML response to the client.
 
 ### WordPress (PHP)
-If your website is built using WordPress, you can integrate SSR for provider and location pages by dynamically fetching the `entity_id` and `entity_type` from the URL. This example uses a WordPress **shortcode** to call the Care Search SSR API and insert the returned HTML directly into your pages. To implement SSR, you’ll need to add some PHP code to your WordPress site. You can place this code in your theme’s `functions.php` file or a custom plugin.
+This example uses a WordPress **shortcode** to call the Care Search SSR API and insert the returned HTML directly into the page.
 
 ```php
 // Function to fetch SSR content from the Care Search API
@@ -138,7 +146,7 @@ In this example, the shortcode `[ssr_profile_content]` is defined which can be p
 Once SSR has been successfully implemented on the server, the final step is to toggle a flag in the Care Search settings. This ensures that the Care Search script recognizes SSR is now active.
 
 ### Why Is This Step Important?
-In scenarios where Care Search is still relying on CSR (Client-Side Rendering) — for instance, on the search results page — when a user clicks on a result, the profile will be displayed using CSR, even though SSR is enabled on the server. To handle this transition effectively, enabling the SSR flag in the admin dashboard ensures that the care search script will load the page from the server to use SSR.
+In scenarios where Care Search is still relying on CSR — for instance, on the search results page — when a user clicks on a result, the profile will be displayed using CSR, even though SSR is enabled on the server. To handle this transition effectively, enabling the SSR flag in the admin dashboard ensures that the care search script will load the page from the server to use SSR.
 
 ### How to Enable the SSR Flag:
 1. Navigate to the Care Search Admin Dashboard.
