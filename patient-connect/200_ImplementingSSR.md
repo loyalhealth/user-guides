@@ -44,6 +44,8 @@ GET https://api.loyalhealth.com/search-ssr/:clientId/:marketId/:profileId?/:enti
   
 The API will return a chunk of HTML that should be inserted **server-side** into the `#loyal-search` section **before** sending the page to the user’s browser.
 
+See the [api documentation](/care-search/docs#tag/SSR-Profile/operation/getProfileHtml) for more information.
+
 ## Examples
 Below are examples of how to do this in different server-side environments.
 
