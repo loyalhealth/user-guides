@@ -10,8 +10,8 @@ To use the Web Scheduling module, this block of code should be placed on the pag
 
 
 ```html
-<section id=”search”></section>
-<script type=”text/javascript” src=”https://scheduling.loyalhealth.com/client/scheduling.bundle.js” data-id=”search-client-id” data-value=”[Your Client ID]” async>
+<section id=”loyal-scheduling></section>
+<script type=”text/javascript” src=”https://scheduling.loyalhealth.com/client/scheduling.bundle.js” data-loyal-client-id="[Your Client ID]" data-loyal-market-id="[Your Market ID: optional]" async>
 </script>
 ```
 
